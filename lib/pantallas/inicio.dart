@@ -13,26 +13,37 @@ class PantallaInicio extends StatelessWidget {
       'nombre': 'Finca La Esperanza',
       'vereda': 'Vereda El Salado',
       'distancia': '2.5 km',
+      'imagen':
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRs-wxNIvaCHQZTbOZYUZAyaovFduJ7M5RHPPgb-7K7ewQx1Ri1yFFnME&s=10',
     },
     {
       'nombre': 'Huerta Doña Rosa',
       'vereda': 'Vereda La María',
       'distancia': '3.1 km',
+      'imagen':
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRs-wxNIvaCHQZTbOZYUZAyaovFduJ7M5RHPPgb-7K7ewQx1Ri1yFFnME&s=10',
     },
     {
       'nombre': 'Finca El Manantial',
       'vereda': 'Vereda El Tablazo',
       'distancia': '4.2 km',
+      'imagen':
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRs-wxNIvaCHQZTbOZYUZAyaovFduJ7M5RHPPgb-7K7ewQx1Ri1yFFnME&s=10',
     },
     {
       'nombre': 'Granja Los Alpes',
       'vereda': 'Vereda Las Palmas',
       'distancia': '5.0 km',
+      'imagen':
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRs-wxNIvaCHQZTbOZYUZAyaovFduJ7M5RHPPgb-7K7ewQx1Ri1yFFnME&s=10',
     },
+
     {
       'nombre': 'Cultivos San Isidro',
       'vereda': 'Vereda El Escobero',
       'distancia': '6.3 km',
+      'imagen':
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvRs-wxNIvaCHQZTbOZYUZAyaovFduJ7M5RHPPgb-7K7ewQx1Ri1yFFnME&s=10',
     },
   ];
 
@@ -106,11 +117,24 @@ class PantallaInicio extends StatelessWidget {
                       margin: const EdgeInsets.only(bottom: 12),
                       elevation: 2,
                       child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.green.shade100,
-                          child: const Icon(
-                            Icons.agriculture,
-                            color: Colors.green,
+                        leading: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.network(
+                            productor['imagen']!,
+                            width: 65,
+                            height: 65,
+                            fit: BoxFit.cover,
+                            errorBuilder: (context, error, stackTrace) {
+                              return Container(
+                                width: 65,
+                                height: 65,
+                                color: Colors.green.shade100,
+                                child: const Icon(
+                                  Icons.agriculture,
+                                  color: Colors.green,
+                                ),
+                              );
+                            },
                           ),
                         ),
                         title: Text(
