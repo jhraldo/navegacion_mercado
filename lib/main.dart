@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'pantallas/login.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MercadoApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mercado Campesino',
-      home: const PantallaLogin(),
+      home: PantallaLogin(),
     );
   }
 }
