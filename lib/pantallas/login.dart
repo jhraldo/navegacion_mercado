@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'inicio.dart';
 
 class PantallaLogin extends StatefulWidget {
   const PantallaLogin({super.key});
@@ -14,14 +15,19 @@ class _PantallaLoginState extends State<PantallaLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Inicio de sesión')),
+      appBar: AppBar(
+        title: const Text('Inicio de sesión'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             const Text(
               'Mercado Campesino',
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
             ),
 
             const SizedBox(height: 30),
@@ -49,7 +55,14 @@ class _PantallaLoginState extends State<PantallaLogin> {
 
             ElevatedButton(
               onPressed: () {
-                // Aquí irá la navegación
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PantallaInicio(
+                      correo: correoController.text,
+                    ),
+                  ),
+                );
               },
               child: const Text('Iniciar sesión'),
             ),
